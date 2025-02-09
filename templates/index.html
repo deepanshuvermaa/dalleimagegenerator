@@ -41,13 +41,13 @@
 </nav>
 
 <div class="container">
-  <h1 class="my-4">Enter your Prompt</h1>
+  <h1 class="my-4">Type your imagination</h1>
 
     <form>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Enter your Prompt to generate Image</label>
+    <label for="exampleInputEmail1" class="form-label">Enter your thoughts to generate Images</label>
     <input id="imgprompt" type="text" class="form-control" aria-describedby="emailHelp">
-    <div  class="form-text">We'll fetch the image from OpenAI</div>
+    <div  class="form-text">We'll bring them to life</div>
   </div>
   <button id="submitbtn" type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -107,17 +107,12 @@
 </g>
 </svg>
       </div>
-    <div class="row imageCont">
-          
+    <div class="row imageCont">         
     </div>
-</div>
-
-  
-</div>
-    
+</div>  
+</div>   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script>
-      
+    <script>      
       submitbtn.addEventListener("click", (e) => {
         loadingGif.classList.toggle("d-none")
         e.preventDefault();
@@ -129,19 +124,15 @@
          console.log(data);
          const images = data.data;
          const container = document.querySelector(".imageCont");
-         let totalHtml = "";
-
-         
+         let totalHtml = "";      
          images.forEach(image => {
            let html = `<div class="col-md-4 my-2">
             <img width="340" src="${image.url}" class="img-responsive">
         </div>`;
-           totalHtml += html;
-         
+           totalHtml += html;         
          });
            container.innerHTML = totalHtml;
-         });
-         
+         });         
        })
     </script>
   </body>
